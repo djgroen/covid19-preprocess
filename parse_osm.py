@@ -1,7 +1,6 @@
 import sys
 import xml.etree.ElementTree as ET
 import pyproj
-from shapely.geometry import Polygon
 from shapely import ops
 from functools import partial
 from shapely.geometry import Polygon, Point
@@ -74,3 +73,10 @@ def random_points_within(poly, num_points):
       points.append(random_point)
 
   return points
+
+
+def get_tag(c2, tag_type):
+  if c2.tag == "tag":
+    if c2.attrib["k"] == tag_type:
+      return c2.attrib["v"]
+  return None
