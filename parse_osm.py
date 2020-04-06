@@ -20,7 +20,7 @@ def get_nodes(way, verbose=False):
   nodes = []
   for c2 in way:
     if c2.tag == "nd":
-      nodes.append(c2.attrib["ref"])
+      nodes.append(int(c2.attrib["ref"]))
       if verbose:
         print(c2.attrib["ref"])
   return nodes

@@ -1,6 +1,6 @@
 import sys
 import xml.etree.ElementTree as ET
-from osm_parser import *
+from parse_osm import *
 
 tree = ET.parse(sys.argv[1])
 root = tree.getroot()
