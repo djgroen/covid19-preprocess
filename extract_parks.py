@@ -22,8 +22,9 @@ for c1 in root:
           if c2.attrib["v"] in ["park","garden","nature_reserve"]:
             p = get_polygon_from_way(c1, node_list)
             if p:
-              print(get_nodes(c1))
-              print(c2.tag, c2.attrib, p.centroid, p.area)
+              #print(get_nodes(c1))
+              #print(c2.tag, c2.attrib, p.centroid, calc_geom_area(p))
+              print("park,{},{},{}".format(p.centroid.x, p.centroid.y, int(calc_geom_area(p))))
 
 
-print("Debug: list of leisure types in osm file:", leisure_types)
+print("Debug: list of leisure types in osm file:", leisure_types, file=sys.stderr)
