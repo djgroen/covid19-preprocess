@@ -6,6 +6,7 @@ tree = ET.parse(sys.argv[1])
 root = tree.getroot()
 
 leisure_types = {}
+node_list = build_node_list(root)
 
 for c1 in root:
   if c1.tag == "way":
@@ -19,9 +20,10 @@ for c1 in root:
             leisure_types[c2.attrib["v"]] = 1
 
           if c2.attrib["v"] in ["park","garden","nature_reserve"]:
-            print(c2.tag, c2.attrib)
-            print(get_nodes(c1))
+            p = get_polygon_from_way(c1, node_list)
+            if p:
+              print(get_nodes(c1))
+              print(c2.tag, c2.attrib, p.centroid, p.area)
 
-node_list = build_node_list(root)
 
 print("Debug: list of leisure types in osm file:", leisure_types)

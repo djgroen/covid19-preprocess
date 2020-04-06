@@ -1,5 +1,6 @@
 import sys
 import xml.etree.ElementTree as ET
+from shapely.geometry import Polygon
 
 def build_node_list(root, verbose=False):
   node_list = {}
@@ -25,3 +26,16 @@ def get_nodes(way, verbose=False):
         print(c2.attrib["ref"])
   return nodes
 
+def get_polygon_from_way(way, node_list, verbose=False):
+  nodes = get_nodes(way, verbose)
+  poly_nodes = []
+  for i in nodes:
+    try:
+      poly_nodes.append(node_list[i])
+    except KeyError:
+      print("Warning: node with key {} is not found, ignoring it...".format(i), file=sys.stderr)
+  if len(poly_nodes) > 3:
+    return Polygon(poly_nodes)
+  else:
+    print("Warning: location has fewer than 3 valid nodes. Omitting it.", file=sys.stderr)
+    return None
