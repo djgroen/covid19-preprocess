@@ -1,5 +1,6 @@
 import sys
 import xml.etree.ElementTree as ET
+import pyproj
 from shapely.geometry import Polygon
 
 def build_node_list(root, verbose=False):
@@ -39,3 +40,18 @@ def get_polygon_from_way(way, node_list, verbose=False):
   else:
     print("Warning: location has fewer than 3 valid nodes. Omitting it.", file=sys.stderr)
     return None
+  
+  # Credit to https://gis.stackexchange.com/questions/127607/area-in-km-from-polygon-of-coordinates
+  # User jczaplew
+def calc_geom_area(poly):
+  poly = ops.transform(
+  partial(
+      pyproj.transform,
+      pyproj.Proj(init='EPSG:4326'),
+      pyproj.Proj(
+          proj='aea',
+          lat1=poly.bounds[1],
+          lat2=poly.bounds[3])),
+  geom)
+    # Print the area in m^2
+    return geom_area.area 
