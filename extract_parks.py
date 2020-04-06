@@ -20,8 +20,8 @@ for c1 in root:
 
           if c2.attrib["v"] in ["park","garden","nature_reserve"]:
             print(c2.tag, c2.attrib)
-            #get_nodes(c1)
+            print(get_nodes(c1))
 
-build_node_list(root)
+node_list = build_node_list(root)
 
-print(leisure_types)
+print("Debug: list of leisure types in osm file:", leisure_types)
