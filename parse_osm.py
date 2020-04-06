@@ -63,3 +63,10 @@ def calc_geom_area(poly):
   # Print the area in m^2
   return p.area
 
+
+def get_tag(c2, tag_type):
+  if c2.tag == "tag":
+    if c2.attrib["k"] == tag_type:
+      return c2.attrib["v"]
+  return None
+
