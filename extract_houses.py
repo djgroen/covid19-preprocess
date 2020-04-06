@@ -30,9 +30,10 @@ Total_Area = 0
 for p in poly_list:
   Total_Area += p[3]
 
+
 with open('house.csv', "w") as outfile:
   for p in poly_list:
-    areaPercent = p[3]/Total_Area * 100
+    areaPercent = p[3]/Total_Area
     Num_of_Houses = int(Total_Num_of_Houses * areaPercent)
     houseArea = int(areaPercent * Num_of_Houses/Total_Num_of_Houses)
     points = random_points_within(p[0], Num_of_Houses)
