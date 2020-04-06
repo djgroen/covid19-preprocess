@@ -4,6 +4,8 @@ import pyproj
 from shapely.geometry import Polygon
 from shapely import ops
 from functools import partial
+from shapely.geometry import Polygon, Point
+import random
 
 def build_node_list(root, verbose=False):
   node_list = {}
@@ -63,10 +65,12 @@ def calc_geom_area(poly):
   # Print the area in m^2
   return p.area
 
+def random_points_within(poly, num_points):
+  min_x, min_y, max_x, max_y = poly.bounds
+  points = []
+  while len(points) < num_points:
+    random_point = Point([random.uniform(min_x, max_x), random.uniform(min_y, max_y)])
+    if (random_point.within(poly)):
+      points.append(random_point)
 
-def get_tag(c2, tag_type):
-  if c2.tag == "tag":
-    if c2.attrib["k"] == tag_type:
-      return c2.attrib["v"]
-  return None
-
+  return points
