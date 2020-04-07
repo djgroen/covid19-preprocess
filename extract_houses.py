@@ -5,8 +5,11 @@ import numpy as np
 import csv
 
 Brent_Population = 330795
+Ealing_Population = 341982
+Harrow_Population = 250149
+Hillingdon_Population = 304824
 Avg_HouseHold = 2.6
-Total_Num_of_Houses = int(Brent_Population/Avg_HouseHold)
+Total_Num_of_Houses = int(Hillingdon_Population/Avg_HouseHold)
 
 tree = ET.parse(sys.argv[1])
 root = tree.getroot()
