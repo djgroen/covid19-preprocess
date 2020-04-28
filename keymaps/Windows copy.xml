@@ -1,0 +1,14 @@
+<keymap version="1" name="Windows copy" parent="$default">
+  <action id="Console.Execute.Multiline" />
+  <action id="Console.Jdbc.Execute" />
+  <action id="DirDiffMenu.SynchronizeDiff.All" />
+  <action id="EditorSplitLine" />
+  <action id="ExecuteInPyConsoleAction">
+    <keyboard-shortcut first-keystroke="shift alt e" />
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+  </action>
+  <action id="JupyterRunCellAction" />
+  <action id="PyExecuteCellAction" />
+  <action id="ViewSource" />
+  <action id="org.jetbrains.r.actions.RunSelection" />
+</keymap>
