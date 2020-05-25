@@ -1,5 +1,5 @@
 # covid19-preprocess
-Repo for essential preprocessing scripts for the Covid19 simulations
+Repo for essential preprocessing scripts for the Covid19 simulations. Additional documentation is available here: https://facs.readthedocs.io/en/latest/preparation.html
 
 ## Obtaining an OSM file.
 OSM files are obtained from either Openstreetmaps.org, or using the OSRM tool.
