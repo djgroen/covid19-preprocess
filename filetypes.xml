@@ -1,0 +1,8 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping pattern="Scatter_Animate" type="Python" />
+      <mapping pattern="Example" type="Python" />
+    </extensionMap>
+  </component>
+</application>
