@@ -3,8 +3,8 @@
     <extensionMap>
       <mapping pattern="Scatter_Animate" type="Python" />
       <mapping pattern="Example" type="Python" />
-      <mapping pattern="ScatterAnimate" type="Python" />
       <mapping pattern="Scatter_Animate2" type="Python" />
+      <mapping pattern="ScatterAnimate" type="Python" />
     </extensionMap>
   </component>
 </application>
