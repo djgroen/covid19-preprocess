@@ -1,0 +1,1 @@
+osmconvert greater-london-latest.osm.osm -B="kc.poly" --complete-ways -o=Kensington_Chelsea.osm
